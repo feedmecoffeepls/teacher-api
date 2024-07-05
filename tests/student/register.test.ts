@@ -1,4 +1,4 @@
-import { registerStudent } from "../../src/controllers/student/register";
+import { registerStudent } from "../../src/controllers/student/register.ts";
 
 describe("Register Student Controller", () => {
   it("registers students for a teacher", async () => {

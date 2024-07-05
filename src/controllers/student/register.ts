@@ -1,4 +1,4 @@
-import { RegistrationModel } from "../../models/registration";
+import { RegistrationModel } from "../../models/registration.ts";
 
 export const registerStudent = async (req, res) => {
   const { teacher, students }: { teacher: number, students: number[] } = req.body;

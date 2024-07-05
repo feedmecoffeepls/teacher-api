@@ -1,5 +1,5 @@
-import { db } from "../db/db";
-import { registrations, InsertRegistration, SelectRegistration } from "../db/schema";
+import { db } from "../db/db.ts";
+import { registrations, InsertRegistration, SelectRegistration } from "../db/schema.ts";
 
 export class RegistrationModel {
   createRegistration = async (data: InsertRegistration): Promise<SelectRegistration> => {

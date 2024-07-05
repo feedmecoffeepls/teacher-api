@@ -1,5 +1,5 @@
 import express from "express";
-import { registerStudent } from "./controllers/student/register";
+import { registerStudent } from "./controllers/student/register.ts";
 
 const app = express();
 app.use(express.json());
