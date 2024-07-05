@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "module": "Node16",
+        "moduleResolution": "bundler",
+        "target": "esnext",
+        "sourceMap": true,
+        "outDir": "dist",
+        "esModuleInterop": true,
+        "resolveJsonModule": true,
+        "allowSyntheticDefaultImports": true,
+        "baseUrl": ".",
+        "paths": {
+            "*": ["src/*"]
+        }
+    },
+    "include": ["src/**/*"]
+}

@@ -1,0 +1,1 @@
+ALTER TABLE "registrations" ADD CONSTRAINT "registrations_student_id_teacher_id_unique" UNIQUE("student_id","teacher_id");
