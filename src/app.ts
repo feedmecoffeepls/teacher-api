@@ -1,15 +1,12 @@
 import express from "express";
-import { registerStudent } from "./controllers/student/register.ts";
+import registerRoutes from "./routes/registerRoutes.ts";
+import studentRoutes from"./routes/studentRoutes.ts";
 
 const app = express();
 app.use(express.json());
 
-app.get("/teachers", (req, res) => {
-  res.send("bye");
-});
-
-
-app.post("/api/register", registerStudent);
+app.use('/api', registerRoutes);
+app.use('/api', studentRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

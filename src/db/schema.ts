@@ -1,4 +1,4 @@
-import { integer, pgTable, serial, text, timestamp, unique } from "drizzle-orm/pg-core";
+import { boolean, integer, pgTable, serial, text, timestamp, unique } from "drizzle-orm/pg-core";
 
 export const registrations = pgTable("registrations", {
   id: serial("id").primaryKey(),
@@ -17,6 +17,7 @@ export const teachers = pgTable("teachers", {
 export const students = pgTable("students", {
   id: serial("id").primaryKey(),
   email: text('email').notNull(),
+  suspended: boolean('suspended').notNull().default(false),
 });
  
 
