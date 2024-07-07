@@ -21,7 +21,7 @@ const validateEmailFormat = (schema) => (req, res, next) => {
     } else if (Array.isArray(value)) {
       if (!Array.isArray(requestValue)) {
         errors.push(`Invalid type for ${key}, expected array`);
-      } else if (requestValue.length === 0) {
+      } else if (!value[0].endsWith('?') && requestValue.length === 0) {
         errors.push(`${key} array should not be empty`);
       } else {
         requestValue.forEach((item) => {

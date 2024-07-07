@@ -35,4 +35,16 @@ export class RegistrationModel {
 
     return commonStudents;
   }
+
+  getNonSuspendedStudentsByTeacherId = async (teacherId: number): Promise<SelectStudent[]> => {
+    const registrationRecords = await db.select()
+      .from(registrations)
+      .leftJoin(students, eq(registrations.studentId, students.id))
+      .where(and(eq(registrations.teacherId, teacherId), eq(students.suspended, false)));
+
+    const allStudents = registrationRecords.map(record => record.students);
+
+    return allStudents;
+  }
 }
+
