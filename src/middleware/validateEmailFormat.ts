@@ -5,26 +5,26 @@ const validateEmailFormat = (schema) => (req, res, next) => {
     /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
   Object.entries(schema).forEach(([key, value]) => {
-    const requestBodyValue = req.body[key];
+    const requestValue = req.body[key] || req.query[key];
 
-    if (!requestBodyValue) {
+    if (!requestValue) {
       errors.push(`${key} is required`);
       return;
     }
 
     if (typeof value === "string") {
-      if (typeof requestBodyValue !== "string") {
+      if (typeof requestValue !== "string") {
         errors.push(`Invalid type for ${key}, expected string`);
-      } else if (!validateEmailFormat(requestBodyValue)) {
+      } else if (!validateEmailFormat(requestValue)) {
         errors.push(`Invalid email format for ${key}`);
       }
     } else if (Array.isArray(value)) {
-      if (!Array.isArray(requestBodyValue)) {
+      if (!Array.isArray(requestValue)) {
         errors.push(`Invalid type for ${key}, expected array`);
-      } else if (requestBodyValue.length === 0) {
+      } else if (requestValue.length === 0) {
         errors.push(`${key} array should not be empty`);
       } else {
-        requestBodyValue.forEach((item) => {
+        requestValue.forEach((item) => {
           if (!validateEmailFormat(item)) {
             errors.push(`Invalid email format in ${key} array`);
           }

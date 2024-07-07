@@ -29,6 +29,13 @@
       "when": 1720291570665,
       "tag": "0003_redundant_the_anarchist",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1720359800835,
+      "tag": "0004_complete_infant_terrible",
+      "breakpoints": true
     }
   ]
 }
