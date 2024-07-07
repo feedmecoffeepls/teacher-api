@@ -1,6 +1,6 @@
-import { RegistrationModel } from "../../models/registration.ts";
-import { TeacherModel } from "../../models/teacher.ts";
-import { StudentModel } from "../../models/student.ts";
+import { RegistrationModel } from "../../models/Register.ts";
+import { TeacherModel } from "../../models/Teacher.ts";
+import { StudentModel } from "../../models/Student.ts";
 
 export const registerStudent = async (req, res) => {
   const { teacher, students }: { teacher: string, students: string[] } = req.body;

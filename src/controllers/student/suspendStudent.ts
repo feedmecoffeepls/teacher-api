@@ -1,4 +1,4 @@
-import { StudentModel } from "../../models/student.ts";
+import { StudentModel } from "../../models/Student.ts";
 
 export const toggleSuspendStudent = async (req, res) => {
   const { email }: { email: string } = req.body;

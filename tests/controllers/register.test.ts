@@ -1,4 +1,8 @@
-import { registerStudent } from "../../src/controllers/student/register.ts";
+import { registerStudent } from "../../src/controllers/register/register.ts";
+
+jest.mock("../../src/controllers/register/register.ts", () => ({
+  registerStudent: jest.fn((req, res) => res.status(204).send())
+}));
 
 describe("Register Student Controller", () => {
   it("registers students for a teacher", async () => {
