@@ -22,10 +22,19 @@ describe('POST /api/register', () => {
     expect(response.status).toBe(204);
   });
 
-  afterAll(async () => {
-    await db.delete(students).where(eq(students.email, 'student1@example.com'));
-    await db.delete(students).where(eq(students.email, 'student2@example.com'));
+  it('should return 207 for partially successful registrations', async () => {
+    const response = await request(app)
+      .post('/api/register')
+      .send({
+        teacher: 'teacherken@gmail.com',
+        students: ['student1@example.com', 'student2@example.com', 'student1@example.com']
+      });
+
+    expect(response.status).toBe(207);
+    expect(response.body.message).toBe('Some registrations were skipped:');
+    expect(response.body.skippedRegistrations).toContain('student1@example.com');
   });
+
 
   it('should return 400 for invalid input', async () => {
     const response = await request(app)
@@ -36,7 +45,21 @@ describe('POST /api/register', () => {
       });
 
     expect(response.status).toBe(400);
-    expect(response.body.message).toBe('Invalid input');
+    expect(response.body.errors).toContain('teacher is required');
+    expect(response.body.errors).toContain('Invalid type for students, expected array');
+  });
+
+  it('should return 400 for invalid email format', async () => {
+    const response = await request(app)
+      .post('/api/register')
+      .send({
+        teacher: 'invalid-email',
+        students: ['student1@example.com', 'invalid-email']
+      });
+
+    expect(response.status).toBe(400);
+    expect(response.body.errors).toContain('Invalid email format for teacher');
+    expect(response.body.errors).toContain('Invalid email format in students array');
   });
 
   it('should return 404 if teacher is not found', async () => {
@@ -51,16 +74,9 @@ describe('POST /api/register', () => {
     expect(response.body.message).toBe('Teacher not found');
   });
 
-  it('should return 500 for internal server error', async () => {
-    // Simulate internal server error by sending invalid data, assumes teacherken@gmail.com exists
-    const response = await request(app)
-      .post('/api/register')
-      .send({
-        teacher: 'teacherken@gmail.com',
-        students: [null]
-      });
-
-    expect(response.status).toBe(500);
-    expect(response.body.message).toBe('Internal server error');
+  afterAll(async () => {
+    await db.delete(students).where(eq(students.email, 'student1@example.com'));
+    await db.delete(students).where(eq(students.email, 'student2@example.com'));
   });
+
 });

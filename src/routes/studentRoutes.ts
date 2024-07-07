@@ -1,8 +1,13 @@
 import express from 'express';
 import { toggleSuspendStudent } from '../controllers/student/suspendStudent.ts';
+import validateEmailFormat from '../middleware/validateEmailFormat.ts';
 
 const router = express.Router();
 
-router.post('/suspend', toggleSuspendStudent);
+const emailSchema = {
+  email: 'string'
+};
+
+router.post('/suspend', validateEmailFormat(emailSchema), toggleSuspendStudent);
 
 export default router;

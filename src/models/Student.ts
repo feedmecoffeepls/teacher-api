@@ -13,7 +13,6 @@ export class StudentModel {
   }
   updateStudentByEmail = async (email: string, data: Partial<InsertStudent>): Promise<SelectStudent | null> => {
     const [updatedStudent] = await db.update(students).set(data).where(eq(students.email, email)).returning();
-    console.log({updatedStudent: updatedStudent})
     return updatedStudent || null;
   }
 }
