@@ -11,6 +11,8 @@ Project uses:
 * Postgres (with neon.tech),&#x20;
 * Drizzle ORM,&#x20;
 * Typescript,&#x20;
+* Jest,&#x20;
+* Supertest,&#x20;
 * and Rollup.&#x20;
 
 The API is hosted using Google Cloud Run. Ci/Cd has been set up with Google Cloud Build.
@@ -42,6 +44,10 @@ There isn't any other endpoints besides the 4 requested ones. Thus, there is als
 > npm run dev
 
 Alternatively, you may also use docker to build the Dockerfile and run that instead. Make sure to expose port 3000.
+
+## Tests
+
+> npm run test
 
 ## Postman
 
