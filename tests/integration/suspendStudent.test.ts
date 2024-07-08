@@ -24,9 +24,7 @@ describe('POST /api/suspend', () => {
       .post('/api/suspend')
       .send({ email: 'test@student.com' });
 
-    expect(response.status).toBe(200);
-    expect(response.body.message).toBe('Student suspension status updated');
-    expect(response.body.student.suspended).toBe(true);
+    expect(response.status).toBe(204);
   });
 
   it('should return 404 if student is not found', async () => {

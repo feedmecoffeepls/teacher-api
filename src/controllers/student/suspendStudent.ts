@@ -16,8 +16,7 @@ export const toggleSuspendStudent = async (req, res) => {
     }
 
     const updatedStudent = await studentModel.updateStudentByEmail(email, { suspended: !student.suspended });
-
-    return res.status(200).json({ message: "Student suspension status updated", student: updatedStudent });
+    return res.status(204).send();
   } catch (error) {
     console.error("Error updating student suspension status:", error);
     return res.status(500).json({ message: "Internal server error" });

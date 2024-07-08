@@ -10,14 +10,14 @@ app.use(express.json());
 app.use('/api', registerRoutes);
 
 const testTeachers = [
-  { email: 'commonteacher1@gmail.com' },
-  { email: 'commonteacher2@gmail.com' }
+  { email: 'commonteachertest1@gmail.com' },
+  { email: 'commonteachertest2@gmail.com' }
 ];
 
 const testStudents = [
-  { email: 'commonstudent1@gmail.com' },
-  { email: 'commonstudent2@gmail.com' },
-  { email: 'commonstudent3@gmail.com' }
+  { email: 'commonstudenttest1@gmail.com' },
+  { email: 'commonstudenttest2@gmail.com' },
+  { email: 'commonstudenttest3@gmail.com' }
 ];
 
 describe('GET /api/commonstudents', () => {

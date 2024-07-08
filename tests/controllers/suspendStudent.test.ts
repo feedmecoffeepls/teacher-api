@@ -32,7 +32,7 @@ describe("toggleSuspendStudent", () => {
     expect(res.json).toHaveBeenCalledWith({ message: "Student not found" });
   });
 
-  it("should update student suspension status and return 200", async () => {
+  it("should update student suspension status and return 204", async () => {
     const student = { email: "test@student.com", suspended: false };
     const updatedStudent = { ...student, suspended: true };
 
@@ -41,8 +41,7 @@ describe("toggleSuspendStudent", () => {
 
     await toggleSuspendStudent(req, res);
 
-    expect(res.status).toHaveBeenCalledWith(200);
-    expect(res.json).toHaveBeenCalledWith({ message: "Student suspension status updated", student: updatedStudent });
+    expect(res.status).toHaveBeenCalledWith(204);
   });
 
   it("should return 500 if there is an internal server error", async () => {

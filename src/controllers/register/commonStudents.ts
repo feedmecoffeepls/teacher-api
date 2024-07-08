@@ -27,6 +27,9 @@ export const getCommonStudents = async (req, res) => {
     const registrationModelInstance = new RegistrationModel();
     const commonStudents = await registrationModelInstance.getCommonStudentsByTeacherId(teacherIdList);
     const studentEmails = commonStudents.map(student => student.email);
+    if (commonStudents.length === 0) {
+      return res.status(404).json({ message: "No common students found" });
+    }
 
     return res.status(200).json({ students: studentEmails });
   } catch (error) {

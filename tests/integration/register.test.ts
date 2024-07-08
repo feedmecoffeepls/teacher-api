@@ -2,7 +2,7 @@ import request from 'supertest';
 import express from 'express';
 import registerRoutes from '../../src/routes/registerRoutes.ts';
 import { db } from '../../src/db/db.ts';
-import { students } from '../../src/db/schema.ts';
+import { teachers, students } from '../../src/db/schema.ts';
 import { eq } from 'drizzle-orm';
 
 const app = express();
@@ -11,11 +11,15 @@ app.use('/api', registerRoutes);
 
 describe('POST /api/register', () => {
 
+  beforeAll(async () => {
+    await db.insert(teachers).values({ email: 'teacherregistertest@gmail.com' });
+  });
+
   it('should register students successfully', async () => {
     const response = await request(app)
       .post('/api/register')
       .send({
-        teacher: 'teacherken@gmail.com',
+        teacher: 'teacherregistertest@gmail.com',
         students: ['student1@example.com', 'student2@example.com']
       });
 
@@ -26,7 +30,7 @@ describe('POST /api/register', () => {
     const response = await request(app)
       .post('/api/register')
       .send({
-        teacher: 'teacherken@gmail.com',
+        teacher: 'teacherregistertest@gmail.com',
         students: ['student1@example.com', 'student2@example.com', 'student1@example.com']
       });
 
@@ -77,6 +81,7 @@ describe('POST /api/register', () => {
   afterAll(async () => {
     await db.delete(students).where(eq(students.email, 'student1@example.com'));
     await db.delete(students).where(eq(students.email, 'student2@example.com'));
+    await db.delete(teachers).where(eq(teachers.email, 'teacherregistertest@gmail.com'));
   });
 
 });

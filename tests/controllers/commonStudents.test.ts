@@ -43,6 +43,21 @@ describe("getCommonStudents", () => {
     expect(res.json).toHaveBeenCalledWith({ message: "No teachers found" });
   });
 
+  it("should return 404 if no common students are found", async () => {
+    const teacher1 = { id: 1, email: "teacher1@example.com" };
+    const teacher2 = { id: 2, email: "teacher2@example.com" };
+
+    TeacherModel.prototype.getTeacherByEmail = jest.fn()
+      .mockResolvedValueOnce(teacher1)
+      .mockResolvedValueOnce(teacher2);
+    RegistrationModel.prototype.getCommonStudentsByTeacherId = jest.fn().mockResolvedValue([]);
+
+    await getCommonStudents(req, res);
+
+    expect(res.status).toHaveBeenCalledWith(404);
+    expect(res.json).toHaveBeenCalledWith({ message: "No common students found" });
+  });
+
   it("should return common students for given teachers", async () => {
     const teacher1 = { id: 1, email: "teacher1@example.com" };
     const teacher2 = { id: 2, email: "teacher2@example.com" };
