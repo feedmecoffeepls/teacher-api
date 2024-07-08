@@ -1,0 +1,1773 @@
+{
+	"info": {
+		"_postman_id": "25d12761-f9ce-454a-bb4a-a37620e1c035",
+		"name": "teacher-student",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33685875"
+	},
+	"item": [
+		{
+			"name": "Localhost",
+			"item": [
+				{
+					"name": "Get Common Students",
+					"item": [
+						{
+							"name": "200 - Non Unique Teachers",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{localhost}}/api/commonstudents?teacher={{teacherken}}&teacher={{teacherken}}",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"commonstudents"
+									],
+									"query": [
+										{
+											"key": "teacher",
+											"value": "{{teacherken}}"
+										},
+										{
+											"key": "teacher",
+											"value": "{{teacherken}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 - Single Teacher",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{localhost}}/api/commonstudents?teacher={{teacherken}}",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"commonstudents"
+									],
+									"query": [
+										{
+											"key": "teacher",
+											"value": "{{teacherken}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 - Common Student",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{localhost}}/api/commonstudents?teacher={{teacherken_%40}}&teacher={{teacherjoe_%40}}",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"commonstudents"
+									],
+									"query": [
+										{
+											"key": "teacher",
+											"value": "{{teacherken_%40}}"
+										},
+										{
+											"key": "teacher",
+											"value": "{{teacherjoe_%40}}"
+										},
+										{
+											"key": "teacher",
+											"value": "{{teacherallen_%40}}",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "400 - No query",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{localhost}}/api/commonstudents",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"commonstudents"
+									],
+									"query": [
+										{
+											"key": "teacher",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "400 - Invalid format",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{localhost}}/api/commonstudents?teacher=\"notanemail\"",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"commonstudents"
+									],
+									"query": [
+										{
+											"key": "teacher",
+											"value": "\"notanemail\""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "400 - Empty string",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{localhost}}/api/commonstudents?teacher=\"\"",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"commonstudents"
+									],
+									"query": [
+										{
+											"key": "teacher",
+											"value": "\"\""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "404 - Teacher not found",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{localhost}}/api/commonstudents?teacher=\"thisteacherdoesnotexist%40gmail.com\"",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"commonstudents"
+									],
+									"query": [
+										{
+											"key": "teacher",
+											"value": "\"thisteacherdoesnotexist%40gmail.com\""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "404 - No Common Students",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{localhost}}/api/commonstudents?teacher={{teacherken_%40}}&teacher={{teacherphil_%40}}",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"commonstudents"
+									],
+									"query": [
+										{
+											"key": "teacher",
+											"value": "{{teacherken_%40}}"
+										},
+										{
+											"key": "teacher",
+											"value": "{{teacherphil_%40}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Register",
+					"item": [
+						{
+							"name": "204, 207 - Teacher Ken",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"teacher\": \"{{teacherken}}\", \"students\": [\"{{studentjon}}\",\"{{studenthon}}\", \"student_only_under_teacher_ken@gmail.com\"]}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/api/register",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "204, 207 - Teacher Joe",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"teacher\": \"{{teacherjoe}}\", \"students\": [\"{{studentjon}}\",\"{{studenthon}}\"]}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/api/register",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "204, 207 - Teacher Allen",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"teacher\": \"{{teacherallen}}\", \"students\": [\"{{studentjon}}\"]}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/api/register",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "204, 207 - Teacher Bob",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"teacher\": \"{{teacherbob}}\", \"students\": [\"{{studentbob}}\"]}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/api/register",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "400 - Teacher Invalid format",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"teacher\": \"notanemail\", \"students\": [\"{{studentjon}}\"]}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/api/register",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "400 - Teacher empty string",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"teacher\": \"\", \"students\": [\"{{studentjon}}\"]}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/api/register",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "400 - Missing required params",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"noTeacher\": \"\", \"noStudent\": [\"{{studentjon}}\"]}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/api/register",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "400 - Missing students",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"teacher\": \"{{teacherken}}\", \"students\": []}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/api/register",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "400 - Student invalid format",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"teacher\": \"{{teacherken}}\", \"students\": [\"{{studentjon}}\", \"notanemail\"]}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/api/register",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "400 - Student empty string",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"teacher\": \"{{teacherken}}\", \"students\": [\"\"]}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/api/register",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "404 - Teacher not found",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"teacher\": \"nonexistentteacher@gmail.com\", \"students\": [\"{{studentjon}}\"]}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/api/register",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"register"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Suspend",
+					"item": [
+						{
+							"name": "204 - Suspend success",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"email\": \"{{studentmary}}\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/api/suspend",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"suspend"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "400 - Invalid format",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"email\": \"notanemail\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/api/suspend",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"suspend"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "400 - Empty string",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"email\": \"\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/api/suspend",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"suspend"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "404 - Student not found",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"email\": \"studentnotexist@gmail.com\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/api/suspend",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"suspend"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Receive given notification",
+					"item": [
+						{
+							"name": "200 - All students exist",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"teacher\": \"{{teacherbob}}\", \"notification\": \"Hello students! @{{studentagnes}} @{{studentmiche}}\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/api/retrievefornotifications",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"retrievefornotifications"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "207 - Success, but Mentions not found or suspended",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"teacher\": \"{{teacherken}}\", \"notification\": \"Hello students! @notastudent@gmail.com @studentsuspended@gmail.com\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/api/retrievefornotifications",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"retrievefornotifications"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "400 - Teacher empty string",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"teacher\": \"\", \"notification\": \"Hello students! @{{studentagnes}} @{{studentmiche}}\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/api/retrievefornotifications",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"retrievefornotifications"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "400 - Teacher invalid format Copy",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"teacher\": \"notanemail\", \"notification\": \"Hello students! @{{studentagnes}} @{{studentmiche}}\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/api/retrievefornotifications",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"retrievefornotifications"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "404 - Regex match only",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"teacher\": \"{{teacherphil}}\", \"notification\": \"Hello students! @nope @nah\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/api/retrievefornotifications",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"retrievefornotifications"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "404 - No receipients",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"teacher\": \"{{teacherphil}}\", \"notification\": \"Hello everyone!\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/api/retrievefornotifications",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"retrievefornotifications"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "404 - Ignore suspended",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"teacher\": \"{{teacherphil}}\", \"notification\": \"Hello everyone! @studentsuspended@gmail.com\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/api/retrievefornotifications",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"retrievefornotifications"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Cloud Run",
+			"item": [
+				{
+					"name": "Get Common Students",
+					"item": [
+						{
+							"name": "200 - Non Unique Teachers",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{cloud_run}}/api/commonstudents?teacher={{teacherken}}&teacher={{teacherken}}",
+									"host": [
+										"{{cloud_run}}"
+									],
+									"path": [
+										"api",
+										"commonstudents"
+									],
+									"query": [
+										{
+											"key": "teacher",
+											"value": "{{teacherken}}"
+										},
+										{
+											"key": "teacher",
+											"value": "{{teacherken}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 - Single Teacher",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{cloud_run}}/api/commonstudents?teacher={{teacherken}}",
+									"host": [
+										"{{cloud_run}}"
+									],
+									"path": [
+										"api",
+										"commonstudents"
+									],
+									"query": [
+										{
+											"key": "teacher",
+											"value": "{{teacherken}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 - Common Student",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{cloud_run}}/api/commonstudents?teacher={{teacherken_%40}}&teacher={{teacherjoe_%40}}",
+									"host": [
+										"{{cloud_run}}"
+									],
+									"path": [
+										"api",
+										"commonstudents"
+									],
+									"query": [
+										{
+											"key": "teacher",
+											"value": "{{teacherken_%40}}"
+										},
+										{
+											"key": "teacher",
+											"value": "{{teacherjoe_%40}}"
+										},
+										{
+											"key": "teacher",
+											"value": "{{teacherallen_%40}}",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "400 - No query",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{cloud_run}}/api/commonstudents",
+									"host": [
+										"{{cloud_run}}"
+									],
+									"path": [
+										"api",
+										"commonstudents"
+									],
+									"query": [
+										{
+											"key": "teacher",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "400 - Invalid format",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{cloud_run}}/api/commonstudents?teacher=\"notanemail\"",
+									"host": [
+										"{{cloud_run}}"
+									],
+									"path": [
+										"api",
+										"commonstudents"
+									],
+									"query": [
+										{
+											"key": "teacher",
+											"value": "\"notanemail\""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "400 - Empty string",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{cloud_run}}/api/commonstudents?teacher=\"\"",
+									"host": [
+										"{{cloud_run}}"
+									],
+									"path": [
+										"api",
+										"commonstudents"
+									],
+									"query": [
+										{
+											"key": "teacher",
+											"value": "\"\""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "404 - Teacher not found",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{cloud_run}}/api/commonstudents?teacher=\"thisteacherdoesnotexist%40gmail.com\"",
+									"host": [
+										"{{cloud_run}}"
+									],
+									"path": [
+										"api",
+										"commonstudents"
+									],
+									"query": [
+										{
+											"key": "teacher",
+											"value": "\"thisteacherdoesnotexist%40gmail.com\""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "404 - No Common Students",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{cloud_run}}/api/commonstudents?teacher={{teacherken_%40}}&teacher={{teacherphil_%40}}",
+									"host": [
+										"{{cloud_run}}"
+									],
+									"path": [
+										"api",
+										"commonstudents"
+									],
+									"query": [
+										{
+											"key": "teacher",
+											"value": "{{teacherken_%40}}"
+										},
+										{
+											"key": "teacher",
+											"value": "{{teacherphil_%40}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Register",
+					"item": [
+						{
+							"name": "204, 207 - Teacher Ken",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"teacher\": \"{{teacherken}}\", \"students\": [\"{{studentjon}}\",\"{{studenthon}}\", \"student_only_under_teacher_ken@gmail.com\"]}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{cloud_run}}/api/register",
+									"host": [
+										"{{cloud_run}}"
+									],
+									"path": [
+										"api",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "204, 207 - Teacher Joe",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"teacher\": \"{{teacherjoe}}\", \"students\": [\"{{studentjon}}\",\"{{studenthon}}\"]}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{cloud_run}}/api/register",
+									"host": [
+										"{{cloud_run}}"
+									],
+									"path": [
+										"api",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "204, 207 - Teacher Allen",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"teacher\": \"{{teacherallen}}\", \"students\": [\"{{studentjon}}\"]}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{cloud_run}}/api/register",
+									"host": [
+										"{{cloud_run}}"
+									],
+									"path": [
+										"api",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "204, 207 - Teacher Bob",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"teacher\": \"{{teacherbob}}\", \"students\": [\"{{studentbob}}\"]}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{cloud_run}}/api/register",
+									"host": [
+										"{{cloud_run}}"
+									],
+									"path": [
+										"api",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "400 - Teacher Invalid format",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"teacher\": \"notanemail\", \"students\": [\"{{studentjon}}\"]}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{cloud_run}}/api/register",
+									"host": [
+										"{{cloud_run}}"
+									],
+									"path": [
+										"api",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "400 - Teacher empty string",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"teacher\": \"\", \"students\": [\"{{studentjon}}\"]}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{cloud_run}}/api/register",
+									"host": [
+										"{{cloud_run}}"
+									],
+									"path": [
+										"api",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "400 - Missing required params",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"noTeacher\": \"\", \"noStudent\": [\"{{studentjon}}\"]}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{cloud_run}}/api/register",
+									"host": [
+										"{{cloud_run}}"
+									],
+									"path": [
+										"api",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "400 - Missing students",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"teacher\": \"{{teacherken}}\", \"students\": []}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{cloud_run}}/api/register",
+									"host": [
+										"{{cloud_run}}"
+									],
+									"path": [
+										"api",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "400 - Student invalid format",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"teacher\": \"{{teacherken}}\", \"students\": [\"{{studentjon}}\", \"notanemail\"]}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{cloud_run}}/api/register",
+									"host": [
+										"{{cloud_run}}"
+									],
+									"path": [
+										"api",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "400 - Student empty string",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"teacher\": \"{{teacherken}}\", \"students\": [\"\"]}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{cloud_run}}/api/register",
+									"host": [
+										"{{cloud_run}}"
+									],
+									"path": [
+										"api",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "404 - Teacher not found",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"teacher\": \"nonexistentteacher@gmail.com\", \"students\": [\"{{studentjon}}\"]}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{cloud_run}}/api/register",
+									"host": [
+										"{{cloud_run}}"
+									],
+									"path": [
+										"api",
+										"register"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Suspend",
+					"item": [
+						{
+							"name": "204 - Suspend success",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"email\": \"{{studentmary}}\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{cloud_run}}/api/suspend",
+									"host": [
+										"{{cloud_run}}"
+									],
+									"path": [
+										"api",
+										"suspend"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "400 - Invalid format",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"email\": \"notanemail\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{cloud_run}}/api/suspend",
+									"host": [
+										"{{cloud_run}}"
+									],
+									"path": [
+										"api",
+										"suspend"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "400 - Empty string",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"email\": \"\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{cloud_run}}/api/suspend",
+									"host": [
+										"{{cloud_run}}"
+									],
+									"path": [
+										"api",
+										"suspend"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "404 - Student not found",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"email\": \"studentnotexist@gmail.com\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{cloud_run}}/api/suspend",
+									"host": [
+										"{{cloud_run}}"
+									],
+									"path": [
+										"api",
+										"suspend"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Receive given notification",
+					"item": [
+						{
+							"name": "200 - All students exist",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"teacher\": \"{{teacherbob}}\", \"notification\": \"Hello students! @{{studentagnes}} @{{studentmiche}}\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{cloud_run}}/api/retrievefornotifications",
+									"host": [
+										"{{cloud_run}}"
+									],
+									"path": [
+										"api",
+										"retrievefornotifications"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "207 - Success, but Mentions not found or suspended",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"teacher\": \"{{teacherken}}\", \"notification\": \"Hello students! @notastudent@gmail.com @studentsuspended@gmail.com\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{cloud_run}}/api/retrievefornotifications",
+									"host": [
+										"{{cloud_run}}"
+									],
+									"path": [
+										"api",
+										"retrievefornotifications"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "400 - Teacher empty string",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"teacher\": \"\", \"notification\": \"Hello students! @{{studentagnes}} @{{studentmiche}}\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{cloud_run}}/api/retrievefornotifications",
+									"host": [
+										"{{cloud_run}}"
+									],
+									"path": [
+										"api",
+										"retrievefornotifications"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "400 - Teacher invalid format Copy",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"teacher\": \"notanemail\", \"notification\": \"Hello students! @{{studentagnes}} @{{studentmiche}}\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{cloud_run}}/api/retrievefornotifications",
+									"host": [
+										"{{cloud_run}}"
+									],
+									"path": [
+										"api",
+										"retrievefornotifications"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "404 - Regex match only",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"teacher\": \"{{teacherphil}}\", \"notification\": \"Hello students! @nope @nah\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{cloud_run}}/api/retrievefornotifications",
+									"host": [
+										"{{cloud_run}}"
+									],
+									"path": [
+										"api",
+										"retrievefornotifications"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "404 - No receipients",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"teacher\": \"{{teacherphil}}\", \"notification\": \"Hello everyone!\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{cloud_run}}/api/retrievefornotifications",
+									"host": [
+										"{{cloud_run}}"
+									],
+									"path": [
+										"api",
+										"retrievefornotifications"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "404 - Ignore suspended",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"teacher\": \"{{teacherphil}}\", \"notification\": \"Hello everyone! @studentsuspended@gmail.com\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{cloud_run}}/api/retrievefornotifications",
+									"host": [
+										"{{cloud_run}}"
+									],
+									"path": [
+										"api",
+										"retrievefornotifications"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "localhost",
+			"value": "localhost:3000"
+		},
+		{
+			"key": "teacherken_%40",
+			"value": "teacherken%40gmail.com"
+		},
+		{
+			"key": "studenthon",
+			"value": "studenthon@gmail.com"
+		},
+		{
+			"key": "studentjon",
+			"value": "studentjon@gmail.com"
+		},
+		{
+			"key": "teacherken",
+			"value": "teacherken@gmail.com",
+			"type": "string"
+		},
+		{
+			"key": "cloud_run",
+			"value": "https://teacher-api-bm244lpjha-as.a.run.app",
+			"type": "string"
+		},
+		{
+			"key": "teacherjoe_%40",
+			"value": "teacherjoe%40gmail.com",
+			"type": "string"
+		},
+		{
+			"key": "teacherjoe",
+			"value": "teacherjoe@gmail.com",
+			"type": "string"
+		},
+		{
+			"key": "teacherallen_%40",
+			"value": "teacherallen%40gmail.com",
+			"type": "string"
+		},
+		{
+			"key": "teacherallen",
+			"value": "teacherallen@gmail.com",
+			"type": "string"
+		},
+		{
+			"key": "teacherphil_%40",
+			"value": "teacherphil%40gmail.com",
+			"type": "string"
+		},
+		{
+			"key": "studentmary",
+			"value": "studentmary@gmail.com",
+			"type": "string"
+		},
+		{
+			"key": "teacherbob",
+			"value": "teacherbob@gmail.com",
+			"type": "string"
+		},
+		{
+			"key": "studentbob",
+			"value": "studentbob@gmail.com",
+			"type": "string"
+		},
+		{
+			"key": "studentagnes",
+			"value": "studentagnes@gmail.com",
+			"type": "string"
+		},
+		{
+			"key": "studentmiche",
+			"value": "studentmiche@gmail.com",
+			"type": "string"
+		},
+		{
+			"key": "teacherphil",
+			"value": "teacherphil@gmail.com",
+			"type": "string"
+		}
+	]
+}
