@@ -1,7 +1,7 @@
 import { StudentModel } from "../../models/Student.ts";
 
 export const toggleSuspendStudent = async (req, res) => {
-  const { email }: { email: string } = req.body;
+  const { student: email }: { email: string } = req.body;
 
   if (!email) {
     return res.status(400).json({ message: "Invalid input" });
