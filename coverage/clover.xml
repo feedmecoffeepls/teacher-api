@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1720602260227" clover="3.2.0">
+  <project timestamp="1720602260227" name="All files">
+    <metrics statements="227" coveredstatements="217" conditionals="57" coveredconditionals="50" methods="35" coveredmethods="27" elements="319" coveredelements="294" complexity="0" loc="227" ncloc="227" packages="6" files="14" classes="14"/>
+    <package name="controllers.register">
+      <metrics statements="83" coveredstatements="82" conditionals="21" coveredconditionals="19" methods="6" coveredmethods="6"/>
+      <file name="commonStudents.ts" path="/mnt/c/TheRest/teacher-api/src/controllers/register/commonStudents.ts">
+        <metrics statements="23" coveredstatements="23" conditionals="7" coveredconditionals="7" methods="2" coveredmethods="2"/>
+        <line num="1" count="4" type="stmt"/>
+        <line num="2" count="4" type="stmt"/>
+        <line num="4" count="4" type="stmt"/>
+        <line num="5" count="8" type="stmt"/>
+        <line num="8" count="8" type="cond" truecount="4" falsecount="0"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="12" count="7" type="stmt"/>
+        <line num="13" count="7" type="stmt"/>
+        <line num="14" count="7" type="stmt"/>
+        <line num="16" count="7" type="stmt"/>
+        <line num="17" count="11" type="stmt"/>
+        <line num="18" count="9" type="cond" truecount="1" falsecount="0"/>
+        <line num="19" count="6" type="stmt"/>
+        <line num="23" count="5" type="cond" truecount="1" falsecount="0"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="27" count="3" type="stmt"/>
+        <line num="28" count="3" type="stmt"/>
+        <line num="29" count="3" type="stmt"/>
+        <line num="30" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="34" count="2" type="stmt"/>
+        <line num="36" count="2" type="stmt"/>
+        <line num="37" count="2" type="stmt"/>
+      </file>
+      <file name="register.ts" path="/mnt/c/TheRest/teacher-api/src/controllers/register/register.ts">
+        <metrics statements="28" coveredstatements="27" conditionals="5" coveredconditionals="4" methods="1" coveredmethods="1"/>
+        <line num="1" count="4" type="stmt"/>
+        <line num="2" count="4" type="stmt"/>
+        <line num="3" count="4" type="stmt"/>
+        <line num="5" count="4" type="stmt"/>
+        <line num="6" count="7" type="stmt"/>
+        <line num="8" count="7" type="stmt"/>
+        <line num="9" count="7" type="stmt"/>
+        <line num="10" count="7" type="stmt"/>
+        <line num="11" count="7" type="stmt"/>
+        <line num="13" count="7" type="stmt"/>
+        <line num="14" count="6" type="cond" truecount="1" falsecount="0"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="18" count="4" type="stmt"/>
+        <line num="20" count="4" type="stmt"/>
+        <line num="21" count="9" type="stmt"/>
+        <line num="22" count="9" type="cond" truecount="1" falsecount="0"/>
+        <line num="23" count="4" type="stmt"/>
+        <line num="25" count="9" type="stmt"/>
+        <line num="26" count="9" type="stmt"/>
+        <line num="28" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="29" count="3" type="stmt"/>
+        <line num="30" count="3" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="37" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="38" count="1" type="stmt"/>
+        <line num="41" count="3" type="stmt"/>
+        <line num="43" count="1" type="stmt"/>
+        <line num="44" count="1" type="stmt"/>
+      </file>
+      <file name="retrieveForNotifications.ts" path="/mnt/c/TheRest/teacher-api/src/controllers/register/retrieveForNotifications.ts">
+        <metrics statements="32" coveredstatements="32" conditionals="9" coveredconditionals="8" methods="3" coveredmethods="3"/>
+        <line num="1" count="4" type="stmt"/>
+        <line num="2" count="4" type="stmt"/>
+        <line num="3" count="4" type="stmt"/>
+        <line num="5" count="4" type="stmt"/>
+        <line num="6" count="11" type="cond" truecount="0" falsecount="1"/>
+        <line num="8" count="11" type="cond" truecount="1" falsecount="0"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="12" count="10" type="stmt"/>
+        <line num="13" count="10" type="stmt"/>
+        <line num="14" count="10" type="stmt"/>
+        <line num="16" count="8" type="cond" truecount="1" falsecount="0"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="20" count="6" type="stmt"/>
+        <line num="21" count="6" type="stmt"/>
+        <line num="23" count="6" type="stmt"/>
+        <line num="24" count="6" type="stmt"/>
+        <line num="25" count="6" type="stmt"/>
+        <line num="27" count="6" type="stmt"/>
+        <line num="28" count="7" type="stmt"/>
+        <line num="29" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="30" count="4" type="stmt"/>
+        <line num="32" count="3" type="stmt"/>
+        <line num="36" count="6" type="stmt"/>
+        <line num="38" count="5" type="stmt"/>
+        <line num="39" count="4" type="stmt"/>
+        <line num="43" count="6" type="cond" truecount="1" falsecount="0"/>
+        <line num="44" count="2" type="stmt"/>
+        <line num="47" count="4" type="cond" truecount="3" falsecount="0"/>
+        <line num="48" count="2" type="stmt"/>
+        <line num="54" count="2" type="stmt"/>
+        <line num="56" count="2" type="stmt"/>
+        <line num="57" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="controllers.student">
+      <metrics statements="14" coveredstatements="13" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      <file name="suspendStudent.ts" path="/mnt/c/TheRest/teacher-api/src/controllers/student/suspendStudent.ts">
+        <metrics statements="14" coveredstatements="13" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="5" type="stmt"/>
+        <line num="6" count="5" type="cond" truecount="0" falsecount="1"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="10" count="5" type="stmt"/>
+        <line num="11" count="5" type="stmt"/>
+        <line num="12" count="5" type="stmt"/>
+        <line num="14" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="db">
+      <metrics statements="19" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="0"/>
+      <file name="db.ts" path="/mnt/c/TheRest/teacher-api/src/db/db.ts">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="16" type="stmt"/>
+        <line num="2" count="16" type="stmt"/>
+        <line num="3" count="16" type="stmt"/>
+        <line num="5" count="16" type="stmt"/>
+        <line num="7" count="16" type="stmt"/>
+        <line num="8" count="16" type="stmt"/>
+      </file>
+      <file name="schema.ts" path="/mnt/c/TheRest/teacher-api/src/db/schema.ts">
+        <metrics statements="13" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="0"/>
+        <line num="1" count="16" type="stmt"/>
+        <line num="2" count="16" type="stmt"/>
+        <line num="4" count="16" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="13" count="16" type="stmt"/>
+        <line num="24" count="16" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="31" count="16" type="stmt"/>
+        <line num="35" count="16" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="43" count="16" type="stmt"/>
+      </file>
+    </package>
+    <package name="middleware">
+      <metrics statements="41" coveredstatements="39" conditionals="23" coveredconditionals="21" methods="8" coveredmethods="8"/>
+      <file name="convertToUniqueArray.ts" path="/mnt/c/TheRest/teacher-api/src/middleware/convertToUniqueArray.ts">
+        <metrics statements="6" coveredstatements="6" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="1" count="4" type="stmt"/>
+        <line num="2" count="7" type="cond" truecount="1" falsecount="0"/>
+        <line num="3" count="4" type="stmt"/>
+        <line num="5" count="7" type="stmt"/>
+        <line num="6" count="7" type="stmt"/>
+        <line num="9" count="4" type="stmt"/>
+      </file>
+      <file name="extractMentions.ts" path="/mnt/c/TheRest/teacher-api/src/middleware/extractMentions.ts">
+        <metrics statements="8" coveredstatements="8" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="2"/>
+        <line num="1" count="4" type="stmt"/>
+        <line num="2" count="11" type="stmt"/>
+        <line num="4" count="11" type="cond" truecount="1" falsecount="0"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="8" count="9" type="stmt"/>
+        <line num="9" count="9" type="cond" truecount="2" falsecount="0"/>
+        <line num="11" count="9" type="stmt"/>
+        <line num="13" count="9" type="stmt"/>
+      </file>
+      <file name="validateEmailFormat.ts" path="/mnt/c/TheRest/teacher-api/src/middleware/validateEmailFormat.ts">
+        <metrics statements="27" coveredstatements="25" conditionals="19" coveredconditionals="17" methods="5" coveredmethods="5"/>
+        <line num="1" count="11" type="stmt"/>
+        <line num="2" count="24" type="stmt"/>
+        <line num="4" count="24" type="stmt"/>
+        <line num="5" count="37" type="stmt"/>
+        <line num="7" count="24" type="stmt"/>
+        <line num="8" count="41" type="cond" truecount="2" falsecount="0"/>
+        <line num="10" count="41" type="cond" truecount="1" falsecount="0"/>
+        <line num="11" count="4" type="stmt"/>
+        <line num="12" count="4" type="stmt"/>
+        <line num="15" count="37" type="cond" truecount="2" falsecount="0"/>
+        <line num="16" count="16" type="cond" truecount="1" falsecount="1"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="18" count="16" type="cond" truecount="1" falsecount="0"/>
+        <line num="19" count="3" type="stmt"/>
+        <line num="21" count="21" type="cond" truecount="1" falsecount="1"/>
+        <line num="22" count="21" type="cond" truecount="2" falsecount="0"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="24" count="20" type="cond" truecount="4" falsecount="0"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="27" count="19" type="stmt"/>
+        <line num="28" count="21" type="cond" truecount="1" falsecount="0"/>
+        <line num="29" count="3" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="38" count="24" type="cond" truecount="2" falsecount="0"/>
+        <line num="39" count="10" type="stmt"/>
+        <line num="41" count="14" type="stmt"/>
+        <line num="45" count="5" type="stmt"/>
+      </file>
+    </package>
+    <package name="models">
+      <metrics statements="48" coveredstatements="47" conditionals="11" coveredconditionals="9" methods="12" coveredmethods="12"/>
+      <file name="Register.ts" path="/mnt/c/TheRest/teacher-api/src/models/Register.ts">
+        <metrics statements="25" coveredstatements="24" conditionals="3" coveredconditionals="2" methods="7" coveredmethods="7"/>
+        <line num="1" count="7" type="stmt"/>
+        <line num="2" count="7" type="stmt"/>
+        <line num="3" count="7" type="stmt"/>
+        <line num="5" count="7" type="stmt"/>
+        <line num="6" count="7" type="stmt"/>
+        <line num="7" count="5" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="11" count="7" type="stmt"/>
+        <line num="12" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="24" count="4" type="stmt"/>
+        <line num="25" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="28" count="3" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="33" count="3" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
+        <line num="39" count="7" type="stmt"/>
+        <line num="40" count="3" type="stmt"/>
+        <line num="45" count="4" type="stmt"/>
+        <line num="47" count="3" type="stmt"/>
+      </file>
+      <file name="Student.ts" path="/mnt/c/TheRest/teacher-api/src/models/Student.ts">
+        <metrics statements="16" coveredstatements="16" conditionals="6" coveredconditionals="5" methods="4" coveredmethods="4"/>
+        <line num="1" count="8" type="stmt"/>
+        <line num="2" count="8" type="stmt"/>
+        <line num="3" count="8" type="stmt"/>
+        <line num="5" count="8" type="stmt"/>
+        <line num="6" count="8" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="10" count="8" type="stmt"/>
+        <line num="11" count="7" type="stmt"/>
+        <line num="12" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="14" count="8" type="stmt"/>
+        <line num="15" count="3" type="stmt"/>
+        <line num="16" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="18" count="8" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="cond" truecount="1" falsecount="1"/>
+      </file>
+      <file name="Teacher.ts" path="/mnt/c/TheRest/teacher-api/src/models/Teacher.ts">
+        <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="1" count="7" type="stmt"/>
+        <line num="2" count="7" type="stmt"/>
+        <line num="3" count="7" type="stmt"/>
+        <line num="5" count="7" type="stmt"/>
+        <line num="6" count="11" type="stmt"/>
+        <line num="7" count="12" type="stmt"/>
+        <line num="8" count="10" type="cond" truecount="2" falsecount="0"/>
+      </file>
+    </package>
+    <package name="routes">
+      <metrics statements="22" coveredstatements="22" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="registerRoutes.ts" path="/mnt/c/TheRest/teacher-api/src/routes/registerRoutes.ts">
+        <metrics statements="15" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="5" count="3" type="stmt"/>
+        <line num="6" count="3" type="stmt"/>
+        <line num="7" count="3" type="stmt"/>
+        <line num="9" count="3" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="16" count="3" type="stmt"/>
+        <line num="20" count="3" type="stmt"/>
+        <line num="25" count="3" type="stmt"/>
+        <line num="27" count="3" type="stmt"/>
+        <line num="29" count="3" type="stmt"/>
+        <line num="31" count="3" type="stmt"/>
+      </file>
+      <file name="studentRoutes.ts" path="/mnt/c/TheRest/teacher-api/src/routes/studentRoutes.ts">
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
